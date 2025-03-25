@@ -29,7 +29,7 @@ jobs:
         
 
       - name: Build with xcodebuild
-        run: xcodebuild -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' build
+        run: xcodebuild -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' build CODE_SIGN_IDENTITY="iPhone Developer" DEVELOPMENT_TEAM="<YOUR_TEAM_ID>"
 
       - name: Checkout code
         uses: actions/checkout@v2
