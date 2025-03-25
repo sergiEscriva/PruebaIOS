@@ -5,16 +5,17 @@ project 'iosApp/iosApp.xcodeproj'
 target 'momoven' do
   use_frameworks!
 
+  # Add your dependencies here
   pod 'Alamofire', '~> 5.4'
   pod 'RealmSwift'
 
-  target 'YourAppTests' do
+  target 'momovenTests' do
     inherit! :search_paths
-    # Añade dependencias específicas para los tests aquí
+    # Add specific dependencies for tests here
   end
 
-  target 'YourAppUITests' do
+  target 'momovenUITests' do
     inherit! :search_paths
-    # Añade dependencias específicas para los tests UI aquí
+    # Add specific dependencies for UI tests here
   end
 end

@@ -1,0 +1,24 @@
+name: Vista direcorio de trabajo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-ios:
+   runs-on: macos-latest
+   steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: donde estoy?
+        run: ls
+
+      - name: Entrar en iosApp
+        run: cd iosApp
+
+      - name: ver iosApp
+        run: ls
