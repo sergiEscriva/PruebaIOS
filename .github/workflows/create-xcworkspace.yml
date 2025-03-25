@@ -2,6 +2,10 @@ name: Create .xcworkspace
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   create-xcworkspace:
