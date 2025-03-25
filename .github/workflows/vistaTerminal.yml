@@ -16,10 +16,10 @@ jobs:
 
       - name: donde estoy?
         run: |
+          ls
           pwd
-          ls -la
 
-      - name: Entrar en iosApp
+      - name: Entrar en iosApp y ver contenido
         run: |
           cd iosApp
           pwd
