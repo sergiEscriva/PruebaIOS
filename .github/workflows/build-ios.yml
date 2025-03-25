@@ -20,18 +20,12 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-
-      - name: donde estoy?
-        run: ls
         
       - name: Install CocoaPods
         run: pod install --repo-update
 
       - name: Build with xcodebuild
         run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' build
-      
-      - name: Check Xcode Version
-        run: xcodebuild -version
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -48,14 +42,14 @@ jobs:
 
       - name: Build iOS App
         run: |
-          xcodebuild -workspace YourApp.xcworkspace \
-            -scheme YourAppScheme \
+          xcodebuild -workspace iosApp.xcworkspace \
+            -scheme iosApp \
             -sdk iphoneos \
             -configuration Release \
-            -archivePath $PWD/build/YourApp.xcarchive \
+            -archivePath $PWD/build/iosApp.xcarchive \
             archive
           xcodebuild -exportArchive \
-            -archivePath $PWD/build/YourApp.xcarchive \
+            -archivePath $PWD/build/iosApp.xcarchive \
             -exportOptionsPlist ExportOptions.plist \
             -exportPath $PWD/build
 
