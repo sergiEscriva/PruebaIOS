@@ -40,7 +40,7 @@ jobs:
           xcode-version: '15.4' # Especifica la versión de Xcode que tienes instalada
 
       - name: Build the app
-        run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.4' build
+        run: xcodebuild -workspace iosApp.xcworkspace -scheme iosApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.4' build
       - name: Build iOS Framework
         run: ./gradlew :shared:packForXcode -Pmode=DEBUG -PsdkName=iphonesimulator
 
