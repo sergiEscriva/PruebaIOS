@@ -11,6 +11,7 @@ jobs:
   build-ios:
     runs-on: macos-latest
     steps:
+    
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -23,12 +24,16 @@ jobs:
       - name: Check Xcode Version
         run: xcodebuild -version
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set up Xcode
-        run: sudo xcode-select --switch /Applications/Xcode_12.4.app
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.4' # Especifica la versión de Xcode que tienes instalada
 
-      - name: Dar permisos de ejecución a gradlew
-        run: chmod +x gradlew
-
+      - name: Build the app
+        run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.4' build
       - name: Build iOS Framework
         run: ./gradlew :shared:packForXcode -Pmode=DEBUG -PsdkName=iphonesimulator
 
