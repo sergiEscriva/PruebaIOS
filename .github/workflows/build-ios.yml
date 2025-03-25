@@ -19,13 +19,13 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+          
+      - name: Dar permisos de ejecución a gradlew
+        run: chmod +x gradlew
 
       - name: Build iOS Framework
         run: ./gradlew :shared:packForXcode -Pmode=DEBUG -PsdkName=iphonesimulator
         
-      - name: Dar permisos de ejecución a gradlew
-        run: chmod +x gradlew
-
       - name: Upload iOS Framework Artifact
         uses: actions/upload-artifact@v4
         with:
