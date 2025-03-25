@@ -20,6 +20,9 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
 
+      - name: Check Xcode Version
+        run: xcodebuild -version
+
       - name: Set up Xcode
         run: sudo xcode-select --switch /Applications/Xcode_12.4.app
 
