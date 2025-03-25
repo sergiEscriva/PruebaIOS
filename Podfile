@@ -1,8 +1,8 @@
 platform :ios, '14.0'
 
-project 'YourApp.xcodeproj'
+project 'iosApp/iosApp.xcodeproj'
 
-target 'YourApp' do
+target 'momoven' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.4'
