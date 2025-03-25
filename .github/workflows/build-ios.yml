@@ -23,6 +23,10 @@ jobs:
         
       - name: Install CocoaPods
         run: pod install --repo-update
+      
+      - name: List Schemes
+        run: xcodebuild -workspace iosApp.xcworkspace -list
+        
 
       - name: Build with xcodebuild
         run: xcodebuild -workspace YourApp.xcworkspace -scheme YourApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=14.4' build
