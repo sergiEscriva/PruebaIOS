@@ -1,11 +1,12 @@
 platform :ios, '14.0'
 
+project 'YourApp.xcodeproj'
+
 target 'YourApp' do
   use_frameworks!
 
-  # Añade tus dependencias aquí, por ejemplo:
-  # pod 'Alamofire', '~> 5.4'
-  # pod 'RealmSwift'
+  pod 'Alamofire', '~> 5.4'
+  pod 'RealmSwift'
 
   target 'YourAppTests' do
     inherit! :search_paths
