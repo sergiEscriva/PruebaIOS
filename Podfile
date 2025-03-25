@@ -9,13 +9,5 @@ target 'iosApp' do
   pod 'Alamofire', '~> 5.4'
   pod 'RealmSwift'
 
-  target 'momovenTests' do
-    inherit! :search_paths
-    # Add specific dependencies for tests here
-  end
 
-  target 'momovenUITests' do
-    inherit! :search_paths
-    # Add specific dependencies for UI tests here
-  end
 end
