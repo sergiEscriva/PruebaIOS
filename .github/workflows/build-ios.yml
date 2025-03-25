@@ -20,6 +20,10 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+
+      - name: donde estoy?
+        run: ls
+        
       - name: Install CocoaPods
         run: pod install --repo-update
 
