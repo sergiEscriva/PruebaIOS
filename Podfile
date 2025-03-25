@@ -2,7 +2,7 @@ platform :ios, '14.0'
 
 project 'iosApp/iosApp.xcodeproj'
 
-target 'momoven' do
+target 'iosApp' do
   use_frameworks!
 
   # Add your dependencies here
